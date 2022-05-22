@@ -8,7 +8,7 @@ function ContactForm() {
     return <p>Thank you for message!</p>
   }
   return (
-    <>
+    <div className='contact'>
       <form onSubmit={handleSubmit} className='insection text-dark'>
         <label className='text-white' htmlFor="email">
         Email Address
@@ -43,7 +43,7 @@ function ContactForm() {
         SEND
         </button>
       </form>
-    </>
+    </div>
   )
 }
 
