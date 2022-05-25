@@ -10,7 +10,7 @@ return (
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
     <div className='contact'>
-    <h5>自己紹介ページ!</h5>
+    <h5>自己紹介コーナー!</h5>
     </div>
         </div>
     </div>
