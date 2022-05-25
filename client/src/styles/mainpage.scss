@@ -1,0 +1,112 @@
+
+$background: #000f4bda;
+$min-size: 6;
+$max-size: 15;
+
+
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main-logo{
+        width: 40%;
+        height: 40%;
+    }
+    .bubble-container{
+        display: flex;
+        flex-direction: row;
+        margin:-10% 15% 10% ;
+        width: 50%;
+        height: 50%;
+
+        .type-writer-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+
+            transform: translate(-50%, -50%);
+            color: #dedede;
+            font-size: calc(6px + ($max-size - $min-size) * ((100vw - 300px) / (1600 - 300)));
+            font-family: monospace;
+            border-right: 1px solid #dedede;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typewriter 5s steps(50) 0.5s 1 normal both,
+            cursorblink 1.5s infinite;
+        }
+        .avatar-logo{
+            margin-top: 5%;
+            width: 15%;
+            height: 15%;
+            border-radius: 90%;;
+        }
+        .box {
+            width: 100%;
+            margin: 5% 3%;
+            background: $background;
+            padding: 20px;
+            text-align: center;
+            font-weight: 900;
+            color: #fff;
+            font-family: arial;
+            position: relative;
+            border-radius: 10px;
+            }
+        
+            
+        .bubble:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 10px solid transparent;
+            border-right: 10px solid $background;
+            border-top: 10px solid $background;
+            border-bottom: 10px solid transparent;
+            left: -19px;
+            top: 10px;
+            }
+    }
+}
+
+@keyframes typewriter {
+    from {
+    width: 0;
+    }
+    
+    to {
+    width: 24em;
+    }
+}
+
+@keyframes cursorblink {
+    from {
+    border-right: 1px solid #dedede;
+    }
+    
+    to {
+    border-right: 1px solid #666;
+    }
+}
+
+@media only screen and (max-width: 600px){
+.mainpage{
+    .main-logo{
+        width: 70%;
+        height: 70%;
+    }
+
+    .bubble-container{
+        width: 80%;
+
+        .box{
+            width: 80%;
+
+        }
+    }
+
+    
+}
+}

@@ -2,7 +2,7 @@ import logo from '../avatar1.png';
 import mainLogo from '../images/logo2.png'
 import '../styles/mainpage.scss';
 
-function MainPage() {
+function About() {
 
 
 
@@ -13,7 +13,7 @@ return (
         <img src={logo} className="avatar-logo" alt="logo" />
         <div class="box bubble"> 
         <div class="type-writer-text">
-        会計士 in ロンドンです。 私のブログへようこそ!
+        This is the about page
         </div>
     </div>
     </div>
@@ -21,4 +21,4 @@ return (
 );
 }
 
-export default MainPage;
+export default About;

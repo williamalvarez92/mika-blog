@@ -166,7 +166,7 @@ const ResponsiveAppBar = () => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="サーチ…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
