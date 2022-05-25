@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -11,28 +12,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Calculator from '../images/abacus.png';
+import Calculator from '../images/logo2.png';
 import SearchIcon from '@mui/icons-material/Search';
-import { createTheme } from '@mui/material/styles';
 
-const primary = createTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
-});
 
-const pages = ['About', 'Blog', 'PodCast', 'Contact'];
+const pages = ['About', 'PodCast', 'Contact'];
+const pagesMobile = ['Home', 'About', 'PodCast', 'Contact'];
+
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -109,7 +95,7 @@ const ResponsiveAppBar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          ><img alt='a' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} src={Calculator}  id='calculator-home'/>
+          ><div className='nav-logo'><img alt='a' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} src={Calculator}  id='calculator-home'/></div>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -142,9 +128,10 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {pagesMobile.map((page) => (
+                
                 <MenuItem className='mobile-nav' key={page} onClick={handleCloseNavMenu}>
-                  <Typography  textAlign="center">{page}</Typography>
+                  <Typography  textAlign="center"><Link id='nav-link-mobile' to={page}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -154,9 +141,8 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link id='nav-link' to={page}>{page}</Link>
               </Button>
             ))}
           </Box>

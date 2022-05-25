@@ -1,5 +1,4 @@
-import logo from '../avatar1.png';
-import mainLogo from '../images/logo2.png'
+import avatar from '../avatar1.png';
 import '../styles/mainpage.scss';
 
 function MainPage() {
@@ -8,9 +7,8 @@ function MainPage() {
 
 return (
 <div className="mainpage">
-<img className='main-logo' alt='logo' src={mainLogo}/>
     <div className='bubble-container'>
-        <img src={logo} className="avatar-logo" alt="logo" />
+        <img src={avatar} className="avatar-logo" alt="logo" />
         <div class="box bubble"> 
         <div class="type-writer-text">
         会計士 in ロンドンです。 私のブログへようこそ!
