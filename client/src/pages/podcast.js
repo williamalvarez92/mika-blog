@@ -9,7 +9,7 @@ function PodCast() {
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
     <div className='contact'>
-    <h5>This is the section where I talk about my podcast!!!!</h5>
+    <h5>ポッドキャストコーナー!!!!</h5>
     </div>
         </div>
     </div>
