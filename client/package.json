@@ -1,6 +1,6 @@
 {
+  "homepage": "https://williamalvarez92.github.io/mikablog",
   "name": "client",
-  "homepage": "https://github.com/williamalvarez92/mikablog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
