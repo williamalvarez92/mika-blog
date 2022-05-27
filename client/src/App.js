@@ -1,8 +1,8 @@
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Link,
+  HashRouter
 } from 'react-router-dom';
 import React from 'react';
 
@@ -26,7 +26,7 @@ import mainLogo from './images/logo2.png'
 
 function App() {
   return (
-    <Router> 
+    <HashRouter basename="/"> 
     <ResponsiveAppBar />
     <div className="App">
     <img className='main-logo' alt='logo' src={mainLogo}/>
@@ -41,7 +41,7 @@ function App() {
         <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found <p><Link style={{ color: 'white'}} to="/">Go to the home page</Link></p></h1>} />
       </Routes>
       </div>
-    </Router>
+    </HashRouter>
     
   );
 }
