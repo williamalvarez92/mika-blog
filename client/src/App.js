@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
+  Link,
 } from 'react-router-dom';
 import React from 'react';
 
@@ -30,14 +31,14 @@ function App() {
     <div className="App">
     <img className='main-logo' alt='logo' src={mainLogo}/>
       <Routes>
-        <Route path="/mika-blog/" exact element={<MainPage />}/>
+        <Route index path="/" exact element={<MainPage />}/>
         <Route path="/Home" exact element={<MainPage />}/>
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contactpage />} />
         <Route path="/Podcast" element={<PodCast />} />
 
 
-        <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found</h1>} />
+        <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found <p><Link style={{ color: 'white'}} to="/">Go to the home page</Link></p></h1>} />
       </Routes>
       </div>
     </Router>
