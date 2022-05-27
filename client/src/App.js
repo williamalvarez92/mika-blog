@@ -31,7 +31,7 @@ function App() {
     <div className="App">
     <img className='main-logo' alt='logo' src={mainLogo}/>
       <Routes>
-        <Route index path="/" exact element={<MainPage />}/>
+        <Route path="/" exact element={<MainPage />}/>
         <Route path="/Home" exact element={<MainPage />}/>
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contactpage />} />
