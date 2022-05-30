@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Backend for the blog",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "serve": "npx nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +20,14 @@
   },
   "homepage": "https://github.com/williamalvarez92/mikablog#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.4"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "mongoose-unique-validator": "^3.0.0",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.16"
   }
 }
