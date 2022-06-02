@@ -6,14 +6,15 @@ dotenv.config()
 
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+import router from './config/router.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const app = express()
 
 const DB_URI = process.env.DB_URI
-const HOST = 'localhost'
-const PORT = process.env.PORT;
+const HOST = process.env.HOST
+const PORT = process.env.PORT
 
 const startServer = async () => {
     try {
@@ -21,9 +22,7 @@ const startServer = async () => {
         console.log('Database has connected successfully')
 
         app.use(express.json())
-        app.get('/', (req, res) => {
-            res.send('Hi!');
-        });
+        app.use('/api', router)
         
         app.use(express.static(path.join(__dirname, 'client', 'build')))
 

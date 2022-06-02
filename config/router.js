@@ -1,44 +1,32 @@
 import express from 'express'
-// import { getUser, getUsers, getAllMatches, createMatch, deleteMatch, getSingleMatch, addFire, updateMatch, createComment, deleteComment } from '../controllers/matches.js' // Import our controllers
-// import { registerUser, loginUser } from '../controllers/auth.js'
-// import { secureRoute } from './secureRoute.js'
+import { getSingleArticle, getAllArticles, createArticle, deleteArticle, updateArticle  } from '../controllers/articles.js'
+import { registerUser, loginUser, getUser, getUsers } from '../controllers/auth.js'
+import { secureRoute } from './secureRoute.js'
 
-// const router = express.Router()
+const router = express.Router()
 
-// // ~~~~~~~~~
+router.route('/users')
+  .get(getUsers)
 
-// router.route('/main')
-//   .get(console.log('Response ended: '))
+router.route('/user')
+  .get(secureRoute, getUser)
 
+router.route('/articles') 
+  .get(getAllArticles)
+  .post(secureRoute, createArticle)
 
-// export default router
-// router.route('/users')
-//   .get(getUsers)
+router.route('/article/:id')
+  .get(getSingleArticle)  
+  .delete(secureRoute, deleteArticle) 
+  .put(updateArticle)
 
-// router.route('/user')
-//   .get(secureRoute, getUser)
+// ~~~~~~~~~
 
-// router.route('/matches') 
-//   .get(getAllMatches)
-//   .post(secureRoute, createMatch)
+router.route('/login')
+  .post(loginUser)
 
-// router.route('/matches/:id')
-//   .get(getSingleMatch)  
-//   .delete(secureRoute, deleteMatch) 
-//   .put(addFire, updateMatch)
+router.route('/register')
+  .post(registerUser)
 
-// // ~~~~~~~~~
-
-// router.route('/matches/:id/comments')
-//   .post(secureRoute, createComment) 
-
-// router.route('/matches/:id/comments/:commentId')
-//   .delete(secureRoute, deleteComment)
   
-// // ~~~~~~~~~
-
-// router.route('/login')
-//   .post(loginUser)
-
-// router.route('/register')
-//   .post(registerUser)
+export default router

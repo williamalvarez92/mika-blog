@@ -11,7 +11,7 @@ useEffect(() => {
     const getData = async () => {
         try {
         const { data } = await axios.get(
-            'http://localhost:4000/api/allarticles'
+            '/mika-blog/api/articles'
         )
             setArticles(data)
         } catch (error) {
@@ -27,8 +27,8 @@ return (
 <div className="mainpage">
     <div className='bubble-container'>
         <img src={avatar} className="avatar-logo" alt="logo" />
-        <div class="box bubble"> 
-        <div class="type-writer-text">
+        <div className="box bubble"> 
+        <div className="type-writer-text">
         会計士 in ロンドンです。 私のブログへようこそ!
         </div>
 
