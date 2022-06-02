@@ -29,5 +29,8 @@
     "mongoose-unique-validator": "^3.0.0",
     "node": "^17.7.2",
     "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
   }
 }

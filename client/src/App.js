@@ -17,6 +17,8 @@ import PodCast from './pages/podcast'
 import './styles/App.scss';
 import './styles/mainpage.scss';
 import './styles/about.scss';
+import './styles/articleCard.scss';
+
 
 import mainLogo from './images/logo2.png'
 

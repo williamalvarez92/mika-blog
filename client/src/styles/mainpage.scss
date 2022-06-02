@@ -3,7 +3,9 @@ $background: #000f4bda;
 $min-size: 6;
 $max-size: 15;
 
-
+#article-card{
+    margin: 5%;
+}
 .mainpage{
     display: flex;
     flex-direction: column;
@@ -63,6 +65,7 @@ $max-size: 15;
             left: -19px;
             top: 10px;
             }
+       
     }
 }
 

@@ -2,7 +2,7 @@ import avatar from '../avatar1.png';
 import '../styles/mainpage.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { getTokenFromLocalStorage } from '../helpers/auth';
+import ArticleCard from '../components/articleCard';
 
 function MainPage() {
 const [ allArticles, setArticles ] = useState([])
@@ -11,7 +11,7 @@ useEffect(() => {
     const getData = async () => {
         try {
         const { data } = await axios.get(
-            '/mika-blog/api/articles'
+            '/api/articles'
         )
             setArticles(data)
         } catch (error) {
@@ -20,7 +20,6 @@ useEffect(() => {
     }
     getData()
     }, [])
-console.log(allArticles)
 
 
 return (
@@ -31,9 +30,9 @@ return (
         <div className="type-writer-text">
         会計士 in ロンドンです。 私のブログへようこそ!
         </div>
-
     </div>
     </div>
+    <ArticleCard id='article-card' articles={allArticles}/>
 </div>
 );
 }
