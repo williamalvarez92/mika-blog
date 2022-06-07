@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/mika-blog/static/css/main.460fa6e9.css",
-    "main.js": "/mika-blog/static/js/main.d50a8f30.js",
+    "main.css": "/mika-blog/static/css/main.9f5ced86.css",
+    "main.js": "/mika-blog/static/js/main.62aebee3.js",
     "static/js/787.c4e7f8f9.chunk.js": "/mika-blog/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/logo2.png": "/mika-blog/static/media/logo2.e4f1ee42090728e55f83.png",
+    "static/media/img-1.webp": "/mika-blog/static/media/img-1.ba7cad2bdaf3650e7caf.webp",
+    "static/media/logo1.png": "/mika-blog/static/media/logo1.c78563ccac040ec619bb.png",
     "static/media/avatar1.png": "/mika-blog/static/media/avatar1.958a6909baa2f0a81667.png",
     "index.html": "/mika-blog/index.html",
-    "main.460fa6e9.css.map": "/mika-blog/static/css/main.460fa6e9.css.map",
-    "main.d50a8f30.js.map": "/mika-blog/static/js/main.d50a8f30.js.map",
+    "main.9f5ced86.css.map": "/mika-blog/static/css/main.9f5ced86.css.map",
+    "main.62aebee3.js.map": "/mika-blog/static/js/main.62aebee3.js.map",
     "787.c4e7f8f9.chunk.js.map": "/mika-blog/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.460fa6e9.css",
-    "static/js/main.d50a8f30.js"
+    "static/css/main.9f5ced86.css",
+    "static/js/main.62aebee3.js"
   ]
 }
