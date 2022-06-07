@@ -20,6 +20,7 @@ import './styles/about.scss';
 import './styles/articleCard.scss';
 
 
+
 import mainLogo from './images/logo2.png'
 
 

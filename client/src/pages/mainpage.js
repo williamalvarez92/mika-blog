@@ -2,7 +2,8 @@ import avatar from '../avatar1.png';
 import '../styles/mainpage.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ArticleCard from '../components/articleCard';
+import ImgMediaCard from '../components/articleCard';
+
 
 function MainPage() {
 const [ allArticles, setArticles ] = useState([])
@@ -32,7 +33,7 @@ return (
         </div>
     </div>
     </div>
-    <ArticleCard id='article-card' articles={allArticles}/>
+	<ImgMediaCard id='article-card' articles={allArticles}/>
 </div>
 );
 }

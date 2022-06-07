@@ -1,35 +1,64 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
-export default function ImgMediaCard() {
-  return (
-    <Card sx={{ maxWidth: 345, marginBottom: 10, backgroundColor: 'rgba(0, 15, 75, 0.4)', borderRadius: 4}}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
+export default function ImgMediaCard({articles}) {
 
-      />
-      <CardContent >
-        <Typography gutterBottom variant="h5" component="div" color={'white'}>
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="white">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
+
+const shortDate = (date) => {return date.split('').slice(0,10)}
+const shortText = (txt) => {return  txt.split(' ').slice(0, 20).join(' ') + '...' }
+
+const [ carouselItems, setItems ] = useState([])
+
+
+const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+};
+
+let items = []
+
+useEffect(() => {
+articles.map((a,b) => 
+	{ items.push(
+	<Card key={b} sx={{ maxWidth: 345, marginBottom: 10, backgroundColor: 'rgb(69, 12, 230, 0.3)', borderRadius: 4}}>
+        <CardContent >
+        <Typography gutterBottom variant="h6" component="div" color={'white'}>
+          {a.title}
+	</Typography> 
+	<Typography variant="body2" color='white'>
+	{shortDate(a.createdAt)}
+	</Typography>
+        <Typography sx={{mt:'2%'}} variant="body2" color="white">
+		  {shortText(a.text)}
+	</Typography>
       </CardContent>
       <CardActions >
       <Button sx={{textDecoration: 'none', color: 'white'}} size="small">Read More</Button>
       <Button sx={{textDecoration: 'none', color: 'white'}} size="small">Share</Button>
       </CardActions>
-    </Card>
+    	</Card> )
+	})
+
+}, [articles])
+
+
+
+  return (
+	  <>	
+	<AliceCarousel
+        mouseTracking
+        items={items}
+        responsive={responsive}
+        controlsStrategy="alternate"
+    />   
+	  </>
   );
 }
 
