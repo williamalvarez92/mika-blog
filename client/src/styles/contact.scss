@@ -1,0 +1,47 @@
+$background: #e7dacc;
+$secondColor: #B9B7BD;
+$text: #515151;
+
+.mainpage{
+    .bubble-container{
+        .contact{
+            h5{
+                color: $text;
+            }
+        }
+    }
+}
+
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text;
+    input, label, textarea{
+    margin: 1%;
+    width: 80%;
+    height: 3vh;
+    border-radius: 12px;
+
+    }
+    textarea{
+    height: 15vh;
+    }
+
+    input::placeholder, textarea::placeholder {  
+    padding: 2%; 
+    } 
+    .g-recaptcha{
+    margin: 1%;
+    }
+    button{
+    margin:1% 0;
+    border-radius: 15px;
+    padding: 2%;
+    font-weight: bold;
+    background-color: $background;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.789);
+    cursor: pointer;
+    }
+
+    }

@@ -24,17 +24,24 @@ useEffect(() => {
 
 
 return (
+    <>
 <div className="mainpage">
     <div className='bubble-container'>
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
         <div className="type-writer-text">
-        会計士 in ロンドンです。 私のブログへようこそ!
+        <span>Hello there and welcome to my blog!</span>
         </div>
     </div>
     </div>
-	<ImgMediaCard id='article-card' articles={allArticles}/>
+    <div className='home-nav'>
+        <a href='a'>Study</a>
+        <a href='a'>Personal finance</a>
+        <a href='a'>Life in the UK</a>
+    </div>
 </div>
+<ImgMediaCard id='article-card' articles={allArticles}/>
+</>
 );
 }
 

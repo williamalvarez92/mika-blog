@@ -1,64 +1,53 @@
-import { useEffect, useState } from 'react'
+import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+import AbacusQuill from '../images/img-1.webp'
 
 export default function ImgMediaCard({articles}) {
-
-
-const shortDate = (date) => {return date.split('').slice(0,10)}
-const shortText = (txt) => {return  txt.split(' ').slice(0, 20).join(' ') + '...' }
-
-const [ carouselItems, setItems ] = useState([])
-
-
-const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-};
-
-let items = []
-
-useEffect(() => {
-articles.map((a,b) => 
-	{ items.push(
-	<Card key={b} sx={{ maxWidth: 345, marginBottom: 10, backgroundColor: 'rgb(69, 12, 230, 0.3)', borderRadius: 4}}>
-        <CardContent >
-        <Typography gutterBottom variant="h6" component="div" color={'white'}>
-          {a.title}
-	</Typography> 
-	<Typography variant="body2" color='white'>
-	{shortDate(a.createdAt)}
-	</Typography>
-        <Typography sx={{mt:'2%'}} variant="body2" color="white">
-		  {shortText(a.text)}
-	</Typography>
-      </CardContent>
-      <CardActions >
-      <Button sx={{textDecoration: 'none', color: 'white'}} size="small">Read More</Button>
-      <Button sx={{textDecoration: 'none', color: 'white'}} size="small">Share</Button>
-      </CardActions>
-    	</Card> )
-	})
-
-}, [articles])
-
-
-
+  
+  const shortDate = (date) =>{return date.slice(0,10)}
+  const shortText = (txt) => {return txt.split(" ").slice(0,20).join(' ') +"..."}
   return (
-	  <>	
-	<AliceCarousel
-        mouseTracking
-        items={items}
-        responsive={responsive}
-        controlsStrategy="alternate"
-    />   
-	  </>
+    <>
+    <div id='mainpage-blogs'>
+    { articles &&
+      articles.map((a,b) => 
+      
+
+      <Card key={b} sx={{ maxWidth: 345, minHeight: 345, marginBottom: 10, backgroundColor: 'none', borderRadius: 4}}>
+      <CardMedia
+      key={b}  
+      component="img"
+        alt="green iguana"
+        height="140"
+        image={AbacusQuill}
+      />
+      <CardContent sx={{backgroundColor:'rgba(81, 81, 81, 0.25)'}} >
+      <Typography component="div" color={'#515151'}>
+          <div style={{display:'flex', justifyContent:"space-between"}}>
+            <span>{shortDate(a.createdAt)}</span>
+            <span>Life in the Uk</span>
+          </div>
+        </Typography>
+        <Typography sx={{margin:"3%"}} gutterBottom variant="h5" component="div" color={'#515151'}>
+          {a.title}
+        </Typography>
+        <Typography variant="body2" color="#515151">
+        {shortText(a.text)}
+        </Typography>
+      </CardContent>
+      <CardActions sx={{backgroundColor:'rgba(81, 81, 81, 0.25);'}} >
+      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small">Read More</Button>
+      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small">Share</Button>
+      </CardActions>
+    </Card>
+      )
+    }
+    </div>
+    </>
   );
 }
-

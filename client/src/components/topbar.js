@@ -12,12 +12,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Calculator from '../images/logo2.png';
+import Calculator from '../images/logo1.png';
 import SearchIcon from '@mui/icons-material/Search';
 
 
-const pages = ['About', 'PodCast', 'Contact'];
-const pagesMobile = ['Home', 'About', 'PodCast', 'Contact'];
+const pages = ['About', 'Blog', 'PodCast', 'Contact'];
+const pagesMobile = ['Home', 'About', 'Blog', 'PodCast', 'Contact'];
 
 
 const ResponsiveAppBar = () => {
@@ -26,9 +26,9 @@ const ResponsiveAppBar = () => {
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha('#515151', 0.15),
     '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: alpha('#515151', 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -76,7 +76,7 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="fixed" sx={{
-        background: '#000f4bda',
+        background: '#e7dacc',
       }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -92,7 +92,7 @@ const ResponsiveAppBar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#868B8E',
               textDecoration: 'none',
             }}
           ><div className='nav-logo'><img alt='a' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} src={Calculator}  id='calculator-home'/></div>
@@ -131,12 +131,12 @@ const ResponsiveAppBar = () => {
               {pagesMobile.map((page) => (
                 
                 <MenuItem className='mobile-nav' key={page} onClick={handleCloseNavMenu}>
-                  <Typography  textAlign="center"><Link id='nav-link-mobile' to={page}>{page}</Link></Typography>
+                  <Typography  sx={{color: 'black'}} textAlign="center"><Link  id='nav-link-mobile' to={page}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{  flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}

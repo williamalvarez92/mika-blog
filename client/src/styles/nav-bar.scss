@@ -1,0 +1,42 @@
+$background: #e7dacc;
+$secondColor: #B9B7BD;
+$text: #515151;
+
+
+#nav-link{
+    color: $text;
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Delius Unicase', cursive;
+    text-decoration: none;
+  }
+  
+  #nav-link-mobile{
+    left:0;
+    margin-right: 2px;
+    color:black;
+    display: block;
+    text-decoration: none;
+    object-position:10% 5%;
+  }
+  .nav-logo {
+    width: 300px;
+    height: 80px;
+    overflow: hidden;
+  }
+  .nav-logo img {
+    height: 300px;
+    margin: -106px 0;
+  }
+  
+  @media only screen and (max-width: 600px){
+    .App {
+        .main-logo{
+          width: 70%;
+          height: 70%;
+      }
+    }
+  
+    }
+  

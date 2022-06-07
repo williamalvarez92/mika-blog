@@ -18,10 +18,10 @@ import './styles/App.scss';
 import './styles/mainpage.scss';
 import './styles/about.scss';
 import './styles/articleCard.scss';
+import './styles/contact.scss';
+import './styles/nav-bar.scss';
 
-
-
-import mainLogo from './images/logo2.png'
+import mainLogo from './images/logo1.png'
 
 
 
@@ -36,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<MainPage />}/>
         <Route path="/Home" exact element={<MainPage />}/>
+        <Route path="/Blog" exact element={<MainPage />}/>
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contactpage />} />
         <Route path="/Podcast" element={<PodCast />} />

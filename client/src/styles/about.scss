@@ -1,8 +1,10 @@
-$background: #000f4bda;
+$background: #e7dacc;
+$secondColor: #B9B7BD;
+$text: #515151;
 
 .about-container{
 
-    color: white;
+    color: $text;
     display: flex;
     flex-direction: column;
     align-items: center;
