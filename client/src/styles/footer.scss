@@ -1,0 +1,27 @@
+
+$background: #e7dacc;
+$secondColor: rgba(185, 183, 189, 0.3);
+$text: #515151;
+
+#footer{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: $text;
+    height: 4vh;
+    border-radius: 30px;
+    background-color: $secondColor;
+    width: 100%;
+}
+
+#footer a{
+text-decoration: none;
+color: #101010;
+}
+
+#footer:hover a{
+    text-decoration:underline;
+    color: #101010;
+    }

@@ -30,17 +30,20 @@ return (
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
         <div className="type-writer-text">
-        <span>Hello there and welcome to my blog!</span>
+        <span>Welcome to my blog! 記事のリクエストやご質問あれば、お気軽にお問い合わせ下さい♪</span>
         </div>
     </div>
     </div>
     <div className='home-nav'>
         <a href='a'>Study</a>
-        <a href='a'>Personal finance</a>
+        <a href='a'>Career</a>
         <a href='a'>Life in the UK</a>
+        <a href='a'>OTHER</a>
+
     </div>
 </div>
-<ImgMediaCard id='article-card' articles={allArticles}/>
+    <ImgMediaCard id='article-card' articles={allArticles}/>
+
 </>
 );
 }

@@ -17,7 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 const pages = ['About', 'Blog', 'PodCast', 'Contact'];
-const pagesMobile = ['Home', 'About', 'Blog', 'PodCast', 'Contact'];
+const pagesMobile = ['About', 'Blog', 'PodCast', 'Contact'];
 
 
 const ResponsiveAppBar = () => {
@@ -105,7 +105,6 @@ const ResponsiveAppBar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon />
             </IconButton>

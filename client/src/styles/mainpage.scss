@@ -3,7 +3,7 @@ $secondColor: #B9B7BD;
 $text: #515151;
 
 $min-size: 6;
-$max-size: 15;
+$max-size: 13;
 
 
 #article-card{
@@ -82,10 +82,12 @@ $max-size: 15;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         border-top: 1px double #515151;
         border-bottom:1px double  #515151;
 
         a{  
+            font-size: calc(6px + ($max-size - $min-size) * ((100vw - 300px) / (1600 - 300)));
             color: $text;
             text-decoration: none;
             margin: 3%;
@@ -99,13 +101,14 @@ $max-size: 15;
     
 }
 
+
 @keyframes typewriter {
     from {
     width: 0;
     }
     
     to {
-    width: 18em;
+    width: 41em;
     }
 }
 

@@ -10,7 +10,9 @@ import AbacusQuill from '../images/img-1.webp'
 export default function ImgMediaCard({articles}) {
   
   const shortDate = (date) =>{return date.slice(0,10)}
+  const shortTitle = (ttl) =>{return ttl.slice(0,25)+"..."}
   const shortText = (txt) => {return txt.split(" ").slice(0,20).join(' ') +"..."}
+
   return (
     <>
     <div id='mainpage-blogs'>
@@ -18,31 +20,33 @@ export default function ImgMediaCard({articles}) {
       articles.map((a,b) => 
       
 
-      <Card key={b} sx={{ maxWidth: 345, minHeight: 345, marginBottom: 10, backgroundColor: 'none', borderRadius: 4}}>
+      <Card key={b} sx={{ maxWidth: 345, marginBottom: 10, backgroundColor: 'none', borderRadius: 4}}>
+      <a id='cards' href='a'>
       <CardMedia
       key={b}  
       component="img"
         alt="green iguana"
-        height="140"
+        height="110"
         image={AbacusQuill}
       />
-      <CardContent sx={{backgroundColor:'rgba(81, 81, 81, 0.25)'}} >
-      <Typography component="div" color={'#515151'}>
+      <CardContent sx={{backgroundColor:'#e7e6e9'}} >
+      <Typography component="div" className='text' color={'#515151'}>
           <div style={{display:'flex', justifyContent:"space-between"}}>
             <span>{shortDate(a.createdAt)}</span>
             <span>Life in the Uk</span>
           </div>
         </Typography>
-        <Typography sx={{margin:"3%"}} gutterBottom variant="h5" component="div" color={'#515151'}>
-          {a.title}
+        <Typography sx={{margin:"3%"}} className='title' gutterBottom variant="h6" component="div" color={'#515151'}>
+          {shortTitle(a.title)}
         </Typography>
-        <Typography variant="body2" color="#515151">
-        {shortText(a.text)}
+        <Typography variant="body3"  className='text' color="#515151">
+        <p>{shortText(a.text)}</p>
         </Typography>
       </CardContent>
-      <CardActions sx={{backgroundColor:'rgba(81, 81, 81, 0.25);'}} >
-      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small">Read More</Button>
-      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small">Share</Button>
+      </a>
+      <CardActions sx={{backgroundColor:'#e7e6e9;'}} >
+      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small">Read More</Button>
+      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small">Share</Button>
       </CardActions>
     </Card>
       )
