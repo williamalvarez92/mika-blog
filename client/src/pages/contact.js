@@ -11,8 +11,7 @@ function Contactpage() {
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
     <div className='contact'>
-    <h5>私に連絡したい場合は私にメッセージを送ってください。
-      あなたのメッセージを楽しみにしています！</h5>
+    <h5>記事のリクエストやご質問あれば、お気軽にお問い合わせ下さい  ♪ <br/>お問い合わせお待ちしてます！</h5>
     <ContactForm />
     </div>
         </div>

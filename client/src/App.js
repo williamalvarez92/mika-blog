@@ -13,9 +13,7 @@ import About from './pages/about';
 import ResponsiveAppBar from './components/topbar';
 import Contactpage from './pages/contact';
 import PodCast from './pages/podcast'
-import Footer from './components/footer';
-
-
+import Login from './auth/login';
 
 import './styles/App.scss';
 import './styles/mainpage.scss';
@@ -32,13 +30,17 @@ import mainLogo from './images/logo1.png'
 
 
 
+
 function App() {
   return (
     <>
     <HashRouter basename="/"> 
     <ResponsiveAppBar />
+    
     <div className="App">
+
     <img className='main-logo' alt='logo' src={mainLogo}/>
+    
       <Routes>
         <Route path="/" exact element={<MainPage />}/>
         <Route path="/Home" exact element={<MainPage />}/>
@@ -46,6 +48,9 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contactpage />} />
         <Route path="/Podcast" element={<PodCast />} />
+        <Route path="/Admin" element={<Login />} />
+        <Route path="/Addpost" element={<PodCast />} />
+
 
 
         <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found <p><Link style={{ color: 'white'}} to="/">Go to the home page</Link></p></h1>} />
@@ -54,7 +59,6 @@ function App() {
       
     </HashRouter>
 
-    {/* <Footer/> */}
     </>
   );
 }

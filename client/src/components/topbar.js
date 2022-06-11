@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Calculator from '../images/logo1.png';
 import SearchIcon from '@mui/icons-material/Search';
-
+import { userIsAuthenticated } from '../helpers/auth';
 
 const pages = ['About', 'Blog', 'PodCast', 'Contact'];
 const pagesMobile = ['About', 'Blog', 'PodCast', 'Contact'];
@@ -144,8 +144,9 @@ const ResponsiveAppBar = () => {
                 <Link id='nav-link' to={page}>{page}</Link>
               </Button>
             ))}
+            {userIsAuthenticated() && <p id='admin-link'>Admin</p>}
           </Box>
-
+         
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

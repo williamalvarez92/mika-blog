@@ -1,12 +1,42 @@
 $background: #e7dacc;
 $secondColor: #B9B7BD;
 $text: #515151;
+$min-size: 6;
+$max-size: 13;
 
-.about-container{
+.contact{
 
     color: $text;
     display: flex;
     flex-direction: column;
     align-items: center;
     
+    h5{
+        font-size: calc(6px + ($max-size - $min-size) * ((100vw - 300px) / (1600 - 300)));
+    }
 }
+
+#about-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    font-size: calc(6px + ($max-size - $min-size) * ((100vw - 300px) / (1600 - 300)));
+    padding: 2%;
+    margin: -2% 25% 5%;
+    border: 3px solid $text;
+    border-radius: 10px;
+    p{
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #about-box{
+        margin: 2% 12%;
+        margin-bottom: 8%;
+    }
+    
+    
+    }
