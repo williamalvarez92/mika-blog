@@ -9,7 +9,9 @@ $text: #515151;
                 color: $text;
             }
         }
+
     }
+  
 }
 
 #contact-form{
@@ -42,6 +44,9 @@ $text: #515151;
     background-color: $background;
     box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.789);
     cursor: pointer;
+    }
+    button:hover{
+        background-color: #cabaa9;
     }
 
     }
