@@ -7,7 +7,7 @@ const SECRET = process.env.SECRET
 
 export const secureRoute = async (req, res, next) => {
   try {
-
+    console.log('WWWWWWWWWWWWWWWWWWWWWWWWW',req.headers)
     if (!req.headers.authorization) throw new Error('Missing headers')
 
     const token = req.headers.authorization.replace('Bearer ', '')

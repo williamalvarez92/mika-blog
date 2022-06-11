@@ -14,13 +14,16 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Calculator from '../images/logo1.png';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from "react-router-dom";
 import { userIsAuthenticated } from '../helpers/auth';
 
 const pages = ['About', 'Blog', 'PodCast', 'Contact'];
 const pagesMobile = ['About', 'Blog', 'PodCast', 'Contact'];
 
 
+
 const ResponsiveAppBar = () => {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const Search = styled('div')(({ theme }) => ({
@@ -64,6 +67,12 @@ const ResponsiveAppBar = () => {
     },
   }));
 
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    window.localStorage.removeItem('token')
+    navigate('/', { replace: true });
+  }
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -127,12 +136,16 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+
               {pagesMobile.map((page) => (
                 
                 <MenuItem className='mobile-nav' key={page} onClick={handleCloseNavMenu}>
-                  <Typography  sx={{color: 'black'}} textAlign="center"><Link  id='nav-link-mobile' to={page}>{page}</Link></Typography>
+                  <Typography  ><Link id='nav-link-mobile' to={page}><span id='nav-link-mobile'>{page}</span></Link></Typography>
                 </MenuItem>
+                
               ))}
+              {userIsAuthenticated() && <p>Admin</p>}
+              {userIsAuthenticated() && <button  onClick={handleLogout}>Logout</button>}
             </Menu>
           </Box>
           <Box sx={{  flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -145,8 +158,8 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
             {userIsAuthenticated() && <p id='admin-link'>Admin</p>}
+            {userIsAuthenticated() && <button id='admin-link' onClick={handleLogout}>Logout</button>}
           </Box>
-         
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

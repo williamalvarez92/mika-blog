@@ -22,9 +22,12 @@ import './styles/articleCard.scss';
 import './styles/contact.scss';
 import './styles/nav-bar.scss';
 import './styles/footer.scss';
+import './styles/admin.scss';
+
 
 
 import mainLogo from './images/logo1.png'
+import AdminPage from './pages/adminpage';
 
 
 
@@ -48,8 +51,8 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contactpage />} />
         <Route path="/Podcast" element={<PodCast />} />
-        <Route path="/Admin" element={<Login />} />
-        <Route path="/Addpost" element={<PodCast />} />
+        <Route path="/Admin" exact element={<Login />} />
+        <Route path="/AdminPage" element={<AdminPage />} />
 
 
 

@@ -1,0 +1,71 @@
+
+
+.loginPage{
+    padding: 5%;
+    // margin-bottom: 5%;
+    form{
+        margin-top: -5%;
+        .form-field{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin:1%;
+            label{
+                font-weight: bold;
+                margin: 0.5%;
+            }
+            input, textarea{
+                border-radius: 10px;
+                padding: 0.5%;
+            }
+        }
+        button{
+            font-weight: bold;
+            margin: 2% 0;
+            border-radius: 10px;
+            padding: 0.5%;
+        }
+    }
+}
+
+
+.addArticlePage{
+    padding: 5%;
+    // margin-bottom: 5%;
+    form{
+        margin-top: -5%;
+        .form-field{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin:1%;
+            label{
+                font-weight: bold;
+                margin: 0.5%;
+            }
+            input, textarea{
+                border-radius: 10px;
+                padding: 0.5%;
+                text-align: center;
+                font-weight: bold;
+            }
+            input{
+            width: 50%;
+            }
+            textarea{
+                width: 80%;
+                height: 40vh;
+            }
+        }
+        button{
+            font-weight: bold;
+            margin: 2% 0;
+            border-radius: 10px;
+            padding: 0.5%;
+        }
+    }
+}

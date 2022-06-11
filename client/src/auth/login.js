@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { getTokenFromLocalStorage } from '../helpers/auth';
 
 const Login = () => {
 
@@ -25,10 +26,14 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.post('/api/login', formData)
+      const { data } = await axios.post('/api/login', formData,
+      {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
+      }
+      )
       setTokenToLocalStorage(data.token)
       
-      navigate('/Addpost', { replace: true });
+      navigate('/AdminPage', { replace: true });
 
     } catch (err) {
       console.log('here')
@@ -37,22 +42,18 @@ const Login = () => {
 
   return (
     <div className="loginPage">
-      <div className="logContainer">
-        <div className="logBox" id="logBox">
-          <form id="logForm" onSubmit={handleSubmit}>
-            <h3 id="logTitle">LOGIN</h3>
-            <div className="form-field logField">
-              <label htmlFor="email" className="logLabel">Email</label>
+          <form onSubmit={handleSubmit}>
+            <h3>ADMIN LOGIN</h3>
+            <div className="form-field">
+              <label htmlFor="email">Email</label>
               <input onInput={handleChange} type="email" name="email" placeholder="Email" value={formData.email}/>
             </div>
-            <div className="form-field logField">
-              <label htmlFor="password" className="logLabel">Password</label>
+            <div className="form-field">
+              <label htmlFor="password" >Password</label>
               <input onInput={handleChange} type="password" name="password" placeholder="Password" value={formData.password} />
             </div>
             <button id="logBtn">Login</button>
           </form>
-        </div>
-      </div>
     </div>
   )
 }

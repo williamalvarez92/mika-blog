@@ -13,7 +13,7 @@ $max-size: 13;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     .bubble-container{
         display: flex;
         flex-direction: row;
@@ -78,6 +78,7 @@ $max-size: 13;
     }
     .home-nav{
         width: 60%;
+        margin-top: -2%;
         margin-bottom: 4%;
         display: flex;
         flex-direction: row;
@@ -108,7 +109,7 @@ $max-size: 13;
     }
     
     to {
-    width: 41em;
+    width: 38em;
     }
 }
 
@@ -126,7 +127,7 @@ $max-size: 13;
 .mainpage{
     margin-top: -15%;
     .bubble-container{
-        width: 80%;
+        width: 85%;
 
         .box{
             width: 80%;
@@ -135,6 +136,15 @@ $max-size: 13;
     }
 
     
+}
+@keyframes typewriter {
+    from {
+    width: 0;
+    }
+    
+    to {
+    width: 38em;
+    }
 }
 
 

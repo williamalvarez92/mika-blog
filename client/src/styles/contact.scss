@@ -5,13 +5,12 @@ $text: #515151;
 .mainpage{
     .bubble-container{
         .contact{
+            width: 100%;
             h5{
                 color: $text;
             }
         }
-
     }
-  
 }
 
 #contact-form{
@@ -21,7 +20,7 @@ $text: #515151;
     color: $text;
     input, label, textarea{
     margin: 1%;
-    width: 80%;
+    width: 90%;
     height: 3vh;
     border-radius: 12px;
 

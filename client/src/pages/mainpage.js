@@ -30,7 +30,7 @@ return (
         <img src={avatar} className="avatar-logo" alt="logo" />
         <div className="box bubble"> 
         <div className="type-writer-text">
-        <span>Welcome to my blog! 記事のリクエストやご質問あれば、お気軽にお問い合わせ下さい♪</span>
+        <span>Welcome to my blog! リクエストやご質問あれば、お気軽にお問い合わせ下さい♪</span>
         </div>
     </div>
     </div>
