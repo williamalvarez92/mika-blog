@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,6 +13,8 @@ export default function ImgMediaCard({articles}) {
   const shortDate = (date) =>{return date.slice(0,10)}
   const shortTitle = (ttl) =>{return ttl.slice(0,25)+"..."}
   const shortText = (txt) => {return txt.split(" ").slice(0,20).join(' ') +"..."}
+
+  
 
   return (
     <>
@@ -45,7 +48,7 @@ export default function ImgMediaCard({articles}) {
       </CardContent>
       </a>
       <CardActions sx={{backgroundColor:'#e7e6e9;'}} >
-      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small">Read More</Button>
+      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small"><Link to={`/Articles/${a._id}`}>Read More</Link></Button>
       <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small">Share</Button>
       </CardActions>
     </Card>

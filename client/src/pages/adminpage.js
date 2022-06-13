@@ -3,7 +3,7 @@ import axios from 'axios';
 import { userIsAuthenticated } from '../helpers/auth';
 import { useNavigate } from "react-router-dom";
 import { TextField } from '@mui/material';
-
+import { getTokenFromLocalStorage } from '../helpers/auth';
 const AdminPage = () => {
 
 const [ allArticles, setArticles ] = useState([])
@@ -45,7 +45,9 @@ useEffect(() => {
         event.preventDefault()
         try {
         const { data } = await axios.post('/api/articles', formData,
-        
+        {  
+            headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
+        }
         )
         setTokenToLocalStorage(data.token)
         

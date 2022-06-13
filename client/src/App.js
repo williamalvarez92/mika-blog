@@ -8,12 +8,15 @@ import React from 'react';
 
 
 
-import MainPage from './pages/mainpage'
+import MainPage from './pages/mainpage';
 import About from './pages/about';
 import ResponsiveAppBar from './components/topbar';
 import Contactpage from './pages/contact';
-import PodCast from './pages/podcast'
+import PodCast from './pages/podcast';
 import Login from './auth/login';
+import Article from './pages/article';
+
+
 
 import './styles/App.scss';
 import './styles/mainpage.scss';
@@ -23,7 +26,7 @@ import './styles/contact.scss';
 import './styles/nav-bar.scss';
 import './styles/footer.scss';
 import './styles/admin.scss';
-
+import './styles/article.scss';
 
 
 import mainLogo from './images/logo1.png'
@@ -53,10 +56,10 @@ function App() {
         <Route path="/Podcast" element={<PodCast />} />
         <Route path="/Admin" exact element={<Login />} />
         <Route path="/AdminPage" element={<AdminPage />} />
+        <Route path="/Articles/:id" element={<Article />} />
 
 
-
-        <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found <p><Link style={{ color: 'white'}} to="/">Go to the home page</Link></p></h1>} />
+        <Route path="*" element={<h1 style={{margin: 20, color: 'white'}}>Page not found <p><Link style={{ color: 'black'}} to="/">Go to the home page</Link></p></h1>} />
       </Routes>
       </div>
       
