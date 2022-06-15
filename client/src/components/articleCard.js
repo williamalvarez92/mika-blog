@@ -24,7 +24,7 @@ export default function ImgMediaCard({articles}) {
       
 
       <Card key={b} sx={{ maxWidth: 345, marginBottom: 10, backgroundColor: 'none', borderRadius: 4}}>
-      <a id='cards' href='a'>
+      <Link id='cards' to={`/Articles/${a._id}`}>
       <CardMedia
       key={b}  
       component="img"
@@ -46,10 +46,10 @@ export default function ImgMediaCard({articles}) {
         <p>{shortText(a.text)}</p>
         </Typography>
       </CardContent>
-      </a>
+      </Link>
       <CardActions sx={{backgroundColor:'#e7e6e9;'}} >
-      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small"><Link to={`/Articles/${a._id}`}>Read More</Link></Button>
-      <Button className='text'  sx={{textDecoration: 'none', color: '#515151'}} size="small">Share</Button>
+      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small"><Link id='card-links' to={`/Articles/${a._id}`}>Read More</Link></Button>
+      <Button sx={{textDecoration: 'none', color: '#515151'}} size="small"><Link id='card-links'to={"a"}>Share</Link></Button>
       </CardActions>
     </Card>
       )

@@ -18,7 +18,8 @@ getArticle()
 }, [id])
 
  const shortDate = (d) => {
-  return d
+   if(d){
+     return d.slice(0,10)}
  }
 
   return(
