@@ -22,6 +22,12 @@ useEffect(() => {
     getData()
     }, [])
 
+    const wordCount = () => {
+    if (allArticles){
+    let allwords = []
+    allArticles.map(x => allwords.push(x.text.length))
+      return allwords.reduce((a,b) => a + b, 0)
+    }}
 
       // History
     let navigate = useNavigate();
@@ -63,8 +69,8 @@ useEffect(() => {
         {userIsAuthenticated() &&
         <div className="adminpage">
             <div className='admin-data'>
-                <div>a</div>
-                <div>a</div>
+                <div>Number of Articles written: {allArticles.length}</div>
+                <div>Words written: {wordCount()}</div>
             </div>
         <div className='addArticlePage'>
         <form onSubmit={handleSubmit}>
