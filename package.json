@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "serve": "npx nodemon index.js",
+    "seed": "node db/seeds.js",
+    "hey": "node db/demo.js",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/williamalvarez92/mikablog.git"
@@ -24,6 +26,7 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "gh-pages": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.4",
     "mongoose-unique-validator": "^3.0.0",
