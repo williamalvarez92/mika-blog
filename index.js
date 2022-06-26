@@ -16,7 +16,6 @@ const DB_URI = process.env.DB_URI
 const HOST = process.env.HOST
 const PORT = process.env.PORT
 
-
 const startServer = async () => {
     try {
         await mongoose.connect(DB_URI)
